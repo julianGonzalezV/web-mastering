@@ -1,0 +1,212 @@
+/*
+:::::::::::::::::::IMPORTANTE:::::::::::::::
+- Los estilos se aplican de arriba hacia abajo, es decir que si mas abajo re-escribe el estilo de algún componente
+entonces se aplicará el que se encuentre más abajo
+
+- #greeting estilos solo campos especificos com por id tienen mayor prioridad para inhabilitarlo entonces note el !important en H2 abajo
+
+
+*/
+
+
+
+/*Explorar funcionalidad del css::after
+https://developer.mozilla.org/es/docs/Web/CSS/padding
+
+*/
+
+/* SELECTORES: Se usan en CSS  para agarrar un elemento cualquiera del html dado su id o su class
+    Id : Solo se permite uno por archivo 
+    Class: Puede repetirlo cuantas veces desee
+*/ 
+
+/* Selector universal: Incluye tooodos los elementos del html
+    Útil para cuando se desea aplica un estilo general , por ejemplo el tipo de letra jeje
+
+    Fuente: separadas por comas lo que indica que si no existe o no se encuentra la fuente 
+    va a poner la siguiente sino la sgte etc , ejemplo "Verdana, Geneva, Tahoma, sans-serif"
+
+    marging : Genera margen/espacio EXTERIOR alredecor del elemento sobre el contenedor actual, en este caso sobre el general
+
+    padding: Genera margen/espacio INTERIOR por todos los lados de un elemento, incluso afectando el tamanio del elemento que lo contiene 
+    https://developer.mozilla.org/es/docs/Web/CSS/padding
+*/
+* {
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+    padding: 8px;
+}
+
+/* ::::::::::::SELECTOR DE ETIQUETAS::::::::::::
+    Va a permitir seleccionar todos los elementos con la etiqueta especificada body, h1-h2-h3-header-footer etc....
+
+*/
+body {
+    background: rgb(255, 254, 254);
+}
+
+h1 {
+    color: rgb(6, 73, 45);
+    background: rgb(237, 237, 243);
+    font-size: 40px;
+    padding: 26PX;
+}
+h2 {
+    color: rgb(6, 73, 45);
+    background: rgb(205, 205, 233);
+    font-size: 20px;
+    padding: 20PX;
+}
+a{
+    font-size: 18px;
+    color: rgb(50, 45, 56);
+    background: rgb(226, 210, 241); 
+    text-decoration: none;
+    transition: background-color .5s;
+}
+a:hover {
+    background: rgb(198, 163, 235);
+  }
+
+/*
+    SELECTOR COMPUESTO
+  Acà le decimos que al a del tag footer le aplique otro estilo 
+
+*/
+
+footer {
+    background-color: rgb(64, 58, 77);
+    color: white;
+    padding: 30px;
+}
+
+footer a{
+    font-size: 18px;
+    color: rgb(240, 239, 241);
+    background: rgb(8, 32, 15); 
+    text-decoration: none;
+    transition: background-color .5s;
+}
+footer a:hover {
+    background: white;
+    color: rgb(0, 0, 0);
+  }
+
+/* :::::::::::SELECTOR DE IDENTIFICADOR:::::::::
+Un identificador està hecho para un unico elemento dentro de la pàgina
+ con # selecciona el id que se colocó en el html 
+ con coma "," puede decir si desea aplicarlo a màs identificadores, es decir reusar el estilo en otro id
+*/
+#description,
+#otroId {
+    background-color: rgb(253, 246, 231);
+}
+/* :::::::::::SELECTOR DE CLASE::::::::: 
+   Un id es unico en la pàgina por buenas practicas y evitar errores futuros. Por lo anterior
+   para aplicar un estilo a multiples elementos  entonces class es el atributo html que habilita esto 
+
+*/
+
+.pagraph{
+    font-style: initial;
+    
+}
+
+.main-pagraph{
+    color: rgb(172, 105, 75);
+    padding: 15px;
+    
+}
+
+.default-pagraph{
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+
+
+/* :::::::::::SELECTOR DE ATRIBUTO::::::::: 
+    Permite seleccionar elementos del DOM , de la web, del Htm PERO CON BASE EN UN ATRIBUTO
+    muy USADO en FORMULARIOS
+
+
+    Notas:
+    display: block Indica que cada elemento como label e input ocupan todo un bloque o fila de la pàgina 
+
+*/
+
+#user form{
+    border: 5px solid rgb(235, 224, 211) ;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+#user form *{
+    display: block;
+}
+
+/* :::::::::::Ahora si SELECTOR DE ATRIBUTO::::::::: 
+    input[type="text"] : Select all inputs elements where type = text 
+*/
+input[type="text"]{
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 300px;
+}
+
+input[type="submit"]{
+    background: rgb(71, 78, 64);
+    color: white;
+    width: 300px;
+    transition: background-color .9s;
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: white;
+    color: rgb(0, 0, 0);
+  }
+
+
+
+  /* :::::::::::SELECTOR DE HIJOS:::::::::
+    SOLO dar estilo a elemenos especificos  que perteneces a un elemento padre
+#menu > li > a  VA POR el id = menu  y le aplica el estilo solo a los hijos que cumplen con la ruta dada con ">" (mayor)
+  */ 
+
+#menu > li > a{
+    font-size: 18px;
+    color: white;
+    background: rgb(255, 145, 145); 
+    text-decoration: none;
+    transition: background-color .5s;
+}
+#menu > li > a:hover {
+    background: rgb(211, 188, 235);
+  }
+
+
+  /*::::::::::DEFINIR PRIORIDAD::::::::::::::
+  #greeting estilos solo campos especificos com por id tienen mayor prioridad para inhabilitarlo entonces note el !important en H2 abajo
+  
+  */
+
+#greeting
+{
+    color: white;
+    background: rgb(108, 124, 111);
+    font-size: 20px;
+    padding: 20PX;
+}
+
+h2 {
+    color: rgb(6, 73, 45) !important;
+    background: rgb(187, 243, 196) !important;
+    font-size: 20px;
+    padding: 20PX;
+}

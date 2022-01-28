@@ -1,0 +1,139 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#general-section{
+    margin: 0px auto;/*Increible esto centra el container general ..no era con align */
+    margin-top: 15px; /*Para que se separe de la parte superior*/
+    width: 100%;
+    border: 1px solid rgb(13, 13, 14);
+}
+#menu{
+    background-color: #eee;
+}
+
+#menu ul li{
+    /*display: inline-block;*/
+    display: block;
+    float: left;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+}
+
+#menu ul li a{
+    color: rgb(228, 79, 37);
+    padding: 15px;
+}
+
+#menu ul li:hover{
+    background-color: rgb(230, 129, 112);
+}
+
+#menu ul li a:hover{
+    color: rgb(65, 62, 61);
+}
+
+#header{
+    text-align: center;
+    line-height: 90px;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(114, 134, 150, 0.9);
+    position: fixed;
+
+}
+#footer{
+    width: 100%;
+    background-color: rgb(43, 43, 82);
+    text-align: center;
+    color: white;
+    height: 55px;
+    line-height: 60px;
+}
+
+#content-section{
+    float: left;
+    width: 70%;
+    border: 1px solid #ccc
+}
+
+#lateral-bar{
+    float: left;
+    width: 29%;
+    border: 1px solid rgb(240, 165, 165);
+    min-height: 200px;
+    max-height: 300px;/*Note que con max-height al llenarse el espaacio con cualquier contenido se sale del borde por eso 
+     OVERFLOW en la siguiente linea*/
+    overflow: scroll;/* posibles valores 
+    1-hidden: corta el contenido , mas usado 
+    2-visible: el por defecto , es decir se sale 
+    3-scroll: muestra scroll, aveces es feo*/
+    text-align: center;
+    /*Aplicando sombras con text-shadow: ejeX ejeY 3px color*/
+    text-shadow: 2px 5px 5px rgb(145, 137, 137);
+}
+
+
+
+
+#content-section .box{
+    margin: 2%;
+    margin-right: 20px;
+    width: 40%;
+    height: 250px;
+    background-color: rgb(243, 236, 227);
+    float: left;
+    border: 0px solid rgb(131, 128, 128);
+    color: black;
+    text-align: center;
+    line-height: 70px;
+    box-shadow: 0px 1px 7px rgb(87, 87, 87);
+    border-radius: 20px;
+    /*
+    :::::::::::OTRAS FORMAS::::::::::::    
+    border-radius: 50px 10px 6px 60px; forma1
+    border-radius: 500px; Casi circulo pero no porque debe ser una caja simetrica */
+}
+
+.free-box{
+    border: 1px solid black;
+    background-color: cadetblue;
+    color: black;
+    width: 50px;
+    height: 50px;
+    /*::Tipos de posicionamiento:::
+        relative: Respeta lo que ya existe (es el por defecto), afecta la estructura por entrar a ser parte de ella
+		absolute: Que no desfigure lo que ya està, y en su lugar sobresalga de la estructura
+    */
+    position: absolute;
+    top: 0px;
+    right: 40%;
+    /*
+        Cuando varios elementos se superponen, 
+        los elementos con mayor valor z-index cubren aquellos con menor valor
+        https://developer.mozilla.org/es/docs/Web/CSS/z-index
+    */
+    z-index: 100;
+
+}
+
+
+.free-box2{
+    border: 1px solid black;
+    background-color: rgb(95, 160, 120);
+    color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 38%;
+    z-index: 101;
+}
+
+.clear-fix{
+    float: none;
+    clear: both;
+}
